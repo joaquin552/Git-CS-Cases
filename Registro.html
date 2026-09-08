@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Cuentas</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: url('https://www.eliberico.com/wp-content/uploads/2026/03/cajas.png') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-container {
+      background-color: rgba(0, 0, 0, 0.7);
+      width: 100%;
+      max-width: 450px;
+      padding: 25px;
+      border-radius: 8px;
+      color: white;
+      text-align: center;
+    }
+
+    .form-container h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .input-group input[type="text"],
+    .input-group input[type="password"],
+    .input-group input[type="email"],
+    .input-group input[type="date"],
+    .input-group input[type="tel"] {
+      width: 100%;
+      padding: 8px;
+      border: none;
+      border-radius: 3px;
+      background-color: #ffffff;
+      font-size: 14px;
+    }
+
+    .inline-fields {
+      display: flex;
+      gap: 15px;
+    }
+
+    .inline-fields .input-group {
+      flex: 1;
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .checkbox-group label {
+      font-size: 13px;
+      font-weight: bold;
+      padding-right: 10px;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 10px 0;
+      border: none;
+      border-radius: 20px;
+      background-color: #ffffff;
+      color: #000000;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .btn:hover {
+      background-color: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h1>Registro de Cuentas</h1>
+
+    <form>
+      <div class="input-group">
+        <label for="usuario">Nombre de Usuario</label>
+        <input type="text" id="usuario" name="usuario" required>
+      </div>
+
+      <div class="input-group">
+        <label for="contrasena">Contraseña</label>
+        <input type="password" id="contrasena" name="contrasena" required>
+      </div>
+
+      <div class="input-group">
+        <label for="confirmar-contrasena">Confirmar Contraseña</label>
+        <input type="password" id="confirmar-contrasena" name="confirmar-contrasena" required>
+      </div>
+
+      <div class="input-group">
+        <label for="correo">Correo Electrónico</label>
+        <input type="email" id="correo" name="correo" required>
+      </div>
+
+      <div class="inline-fields">
+        <div class="input-group">
+          <label for="nacimiento">Fecha de Nacimiento</label>
+          <input type="date" id="nacimiento" name="nacimiento">
+        </div>
+        <div class="input-group">
+          <label for="telefono">Número Telefónico</label>
+          <input type="tel" id="telefono" name="telefono">
+        </div>
+      </div>
+
+      <div class="checkbox-group">
+        <label for="terminos">Acepta los términos y condiciones para acceder a este sitio</label>
+        <input type="checkbox" id="terminos" name="terminos" required>
+      </div>
+
+      <div class="checkbox-group">
+        <label for="novedades">Recibir novedades de nuevas cajas añadidas a la página al correo</label>
+        <input type="checkbox" id="novedades" name="novedades">
+      </div>
+
+      <div class="button-group">
+        <button type="button" class="btn">Cancelar</button>
+        <button type="submit" class="btn">Crear Cuenta</button>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>

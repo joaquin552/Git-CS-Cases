@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BoxCS2</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #000;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+
+    header {
+      padding: 20px 30px;
+      display: flex;
+      align-items: center;
+      background-color: #000;
+      z-index: 10;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .logo-icon {
+      color: #ffaa00;
+      font-size: 24px;
+    }
+
+   
+    .main-container {
+      position: relative;
+      flex: 1;
+      background: url('https://blog-uploads.eneba.games/uploads/2026/04/opening-a-case-best-cs2-case-opening-sites.webp') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      padding: 0 50px;
+    }
+
+   
+    .menu-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      z-index: 5;
+    }
+
+    .action-btn {
+      background-color: #ffffff;
+      color: #000000;
+      border: 3px solid #000000;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      cursor: pointer;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+      text-transform: uppercase;
+      text-align: center;
+      text-decoration: none;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .action-btn:hover {
+      background-color: #f0f0f0;
+      transform: scale(1.05);
+    }
+
+   
+    footer {
+      background-color: #000;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .auth-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .user-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 3px solid #ffffff;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .user-avatar::after {
+      content: '';
+      width: 16px;
+      height: 16px;
+      background-color: #000;
+      border-radius: 50%;
+    }
+
+    .auth-links {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .auth-links a {
+      color: #ffffff;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .auth-links a:hover {
+      color: #ffaa00;
+    }
+
+    .auth-separator {
+      margin: 0 5px;
+    }
+  </style>
+</head>
+<body>
+
+ 
+  <header>
+    <div class="logo">
+      <span class="logo-icon">Box</span> CS2
+    </div>
+  </header>
+
+ 
+  <main class="main-container">
+    <div class="menu-buttons">
+      <button class="action-btn">ABRIR CAJAS</button>
+      <button class="action-btn">SKINS OBTENIDAS</button>
+    </div>
+  </main>
+
+  
+  <footer>
+    <div class="auth-container">
+      <div class="user-avatar"></div>
+      <div class="auth-links">
+        <a href="InicioSesion.html">Iniciar Sesión</a>
+        <span class="auth-separator">/</span>
+        <a href="Registro.html">Registrarse</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
