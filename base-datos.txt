@@ -1,0 +1,55 @@
+CREATE TABLE usuario (
+    IDusuario INT AUTO_INCREMENT PRIMARY KEY,
+    nombreUsuario VARCHAR(25) NOT NULL UNIQUE,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    contraseña VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE objeto (
+    IDobjeto INT AUTO_INCREMENT PRIMARY KEY,
+    nombreObjeto VARCHAR(50) NOT NULL,
+    rareza VARCHAR(25) NOT NULL,
+    IDusuario INT NOT NULL,
+    FOREIGN KEY (IDusuario) 
+        REFERENCES usuario(IDusuario)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE caja (
+    IDcaja INT AUTO_INCREMENT PRIMARY KEY,
+    nombreCaja VARCHAR(50) NOT NULL,
+    tipoCaja VARCHAR(25) NOT NULL,
+    IDobjeto INT NOT NULL,
+    FOREIGN KEY (IDobjeto) 
+        REFERENCES objeto(IDobjeto)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE arma (
+    IDarma INT AUTO_INCREMENT PRIMARY KEY,
+    nombreArma VARCHAR(50) NOT NULL,
+    probabilidad INT NOT NULL,
+    tipoArma VARCHAR(25) NOT NULL,
+    IDobjeto INT NOT NULL,
+    FOREIGN KEY (IDobjeto) 
+        REFERENCES objeto(IDobjeto)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE inventario_usuario (
+    IDinventario INT AUTO_INCREMENT PRIMARY KEY,
+    IDusuario INT NOT NULL,
+    IDobjeto INT NOT NULL,
+    fechaObtencion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (IDusuario) 
+        REFERENCES usuario(IDusuario)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+    FOREIGN KEY (IDobjeto) 
+        REFERENCES objeto(IDobjeto)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
