@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #000000;
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .login-container {
+      display: flex;
+      width: 100%;
+      max-width: 1000px;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .image-section {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .image-section img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      object-fit: cover;
+    }
+
+   
+    .form-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-section h1 {
+      font-size: 42px;
+      margin-bottom: 30px;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      background-color: #ffffff;
+      font-size: 16px;
+      color: #000;
+    }
+
+   
+    .captcha-group {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+      margin-bottom: 40px;
+    }
+
+    .captcha-group p {
+      font-size: 18px;
+      font-weight: bold;
+      max-width: 250px;
+      line-height: 1.2;
+    }
+
+    .captcha-box {
+      width: 60px;
+      height: 60px;
+      background-color: #ffffff;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .captcha-box input[type="checkbox"] {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+
+
+    .links-group {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 20px;
+    }
+
+    .links-group a {
+      color: #3b82f6;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      max-width: 160px;
+      line-height: 1.2;
+      transition: color 0.2s;
+    }
+
+    .links-group a.right-link {
+      text-align: right;
+    }
+
+    .links-group a:hover {
+      color: #60a5fa;
+      text-decoration: underline;
+    }
+
+    
+    @media (max-width: 768px) {
+      .login-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    
+  
+    <div class="image-section">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk6ZhLgJBKxrcGav9AzIVK2ESPHtKWG63cvlfIv66qb8_kZCsT7KBqYKcH&s=10" alt="Cajas CS:GO Bravo/Winter">
+    </div>
+
+   
+    <div class="form-section">
+      <h1>Iniciar Sesión</h1>
+
+      <form>
+        <div class="input-group">
+          <label for="usuario">Nombre de Usuario</label>
+          <input type="text" id="usuario" name="usuario" required>
+        </div>
+
+        <div class="input-group">
+          <label for="contrasena">Contraseña</label>
+          <input type="password" id="contrasena" name="contrasena" required>
+        </div>
+
+        <div class="captcha-group">
+          <p>Confirmar que no eres un Botsito</p>
+          <div class="captcha-box">
+            <input type="checkbox" id="captcha" name="captcha" required>
+          </div>
+        </div>
+
+        <div class="links-group">
+          <a href="#">Otro método de inicio de sesión</a>
+          <a href="#" class="right-link">¿Te olvidaste la contraseña?</a>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</body>
+</html>
