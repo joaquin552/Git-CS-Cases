@@ -104,6 +104,21 @@ if (!isset($_SESSION['usuario'])) {
         .logout-btn:hover {
             background-color: #cc0000;
         }
+
+        .cerrar-btn {
+            display: block;
+            width: max-content;
+            margin: 30px auto;
+            padding: 10px 20px;
+            background-color: #ff4d4d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .cerrar-btn:hover {
+            background-color: #cc0000;
+        }
     </style>
 </head>
 <body>
@@ -136,6 +151,13 @@ if (!isset($_SESSION['usuario'])) {
 
     <!-- Botón para cerrar sesión (opcional pero útil) -->
     <a href="logout.php" class="logout-btn">Cerrar Sesión</a>
+
+    <!-- Formulario para eliminar cuenta con advertencia de seguridad -->
+    <form action="eliminar.php" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar tu cuenta permanentemente? Esta acción no se puede deshacer.');">
+        <button type="submit" class="cerrar-btn" style="background-color: #b30000; border: none; cursor: pointer;">
+            Eliminar Cuenta
+        </button>
+    </form>
 
 </body>
 </html>

@@ -1,173 +1,194 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registro de Cuentas</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoxCS2</title>
+    <!-- Importación de fuente estilo pixel -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-    body {
-      background: url('https://www.eliberico.com/wp-content/uploads/2026/03/cajas.png') no-repeat center center fixed;
-      background-size: cover;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+        body {
+            background-color: #000;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
-    .form-container {
-      background-color: rgba(0, 0, 0, 0.7);
-      width: 100%;
-      max-width: 450px;
-      padding: 25px;
-      border-radius: 8px;
-      color: white;
-      text-align: center;
-    }
+        /* Barra de navegación superior */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #000;
+        }
 
-    .form-container h1 {
-      font-size: 28px;
-      margin-bottom: 20px;
-      font-weight: bold;
-    }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #fff;
+        }
 
-    .input-group {
-      margin-bottom: 15px;
-      text-align: left;
-    }
+        .logo span {
+            color: #f39c12;
+        }
 
-    .input-group label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-      font-size: 14px;
-    }
+        .search-btn {
+            background: #fff;
+            border: none;
+            padding: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .input-group input[type="text"],
-    .input-group input[type="password"],
-    .input-group input[type="email"],
-    .input-group input[type="date"],
-    .input-group input[type="tel"] {
-      width: 100%;
-      padding: 8px;
-      border: none;
-      border-radius: 3px;
-      background-color: #ffffff;
-      font-size: 14px;
-    }
+       .hero {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px;
+    background-image: url('https://blog-uploads.eneba.games/uploads/2026/04/opening-a-case-best-cs2-case-opening-sites.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
 
-    .inline-fields {
-      display: flex;
-      gap: 15px;
-    }
+        /* Menú de Botones Estilo Pixel */
+        .menu-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 2;
+        }
 
-    .inline-fields .input-group {
-      flex: 1;
-    }
+        .btn-pixel {
+            background-color: #ffffff;
+            color: #000;
+            border: 4px solid #000;
+            border-radius: 40px;
+            padding: 15px 30px;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.9rem;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 4px 4px 0px #000;
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+            cursor: pointer;
+            width: 280px;
+        }
 
-    .checkbox-group {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 15px;
-      text-align: left;
-    }
+        .btn-pixel:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px #000;
+        }
 
-    .checkbox-group label {
-      font-size: 13px;
-      font-weight: bold;
-      padding-right: 10px;
-    }
+        .btn-pixel:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px #000;
+        }
 
-    .checkbox-group input[type="checkbox"] {
-      width: 20px;
-      height: 20px;
-      cursor: pointer;
-    }
+        /* Barra Inferior / Footer */
+        footer {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: #000;
+        }
 
-    .button-group {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      margin-top: 20px;
-    }
+        .auth-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-    .btn {
-      flex: 1;
-      padding: 10px 0;
-      border: none;
-      border-radius: 20px;
-      background-color: #ffffff;
-      color: #000000;
-      font-size: 14px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
+        .avatar-icon {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #00f2fe;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .btn:hover {
-      background-color: #e0e0e0;
-    }
-  </style>
+        .auth-links {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .auth-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .auth-links a:hover {
+            color: #f39c12;
+        }
+
+        .auth-links .divider {
+            margin: 0 5px;
+            color: #888;
+        }
+    </style>
 </head>
 <body>
 
-  <div class="form-container">
-    <h1>Registro de Cuentas</h1>
-
-    <form action="procesar.php" method="POST">
-      <div class="input-group">
-        <label for="usuario">Nombre de Usuario</label>
-        <input type="text" id="usuario" name="usuario" required>
-      </div>
-
-      <div class="input-group">
-        <label for="contrasena">Contraseña</label>
-        <input type="password" id="contrasena" name="contrasena" required>
-      </div>
-
-      <div class="input-group">
-        <label for="confirmar-contrasena">Confirmar Contraseña</label>
-        <input type="password" id="confirmar-contrasena" name="confirmar-contrasena" required>
-      </div>
-
-      <div class="input-group">
-        <label for="correo">Correo Electrónico</label>
-        <input type="email" id="correo" name="correo" required>
-      </div>
-
-      <div class="inline-fields">
-        <div class="input-group">
-          <label for="nacimiento">Fecha de Nacimiento</label>
-          <input type="date" id="nacimiento" name="nacimiento">
+    <!-- Encabezado -->
+    <header>
+        <div class="logo">
+            <span>🎁</span> BoxCS2
         </div>
-        <div class="input-group">
-          <label for="telefono">Número Telefónico</label>
-          <input type="tel" id="telefono" name="telefono">
+        <button class="search-btn" aria-label="Buscar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+        </button>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="hero">
+        <div class="menu-buttons">
+            <a href="registrarse.php" class="btn-pixel">VER PERFIL</a>
+            <a href="#" class="btn-pixel">ABRIR CAJAS</a>
+            <a href="#" class="btn-pixel">SKINS OBTENIDAS</a>
+            <a href="#" class="btn-pixel">ACERCA DE NOSOTROS</a>
         </div>
-      </div>
+    </main>
 
-      <div class="checkbox-group">
-        <label for="terminos">Acepta los términos y condiciones para acceder a este sitio</label>
-        <input type="checkbox" id="terminos" name="terminos" required>
-      </div>
+    <!-- Pie de página -->
+    <footer>
+        <div class="auth-container">
+            <div class="avatar-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                </svg>
+            </div>
+            <div class="auth-links">
+                <a href="#">Iniciar Sesión</a>
+                <span class="divider">/</span>
+                <a href="iniciosesion.php">Registrarse</a>
+            </div>
+        </div>
+    </footer>
 
-      <div class="checkbox-group">
-        <label for="novedades">Recibir novedades de nuevas cajas añadidas a la página al correo</label>
-        <input type="checkbox" id="novedades" name="novedades">
-      </div>
-
-      <div class="button-group">
-        <button type="button" class="btn">Cancelar</button>
-        <button type="submit" class="btn">Crear Cuenta</button>
-      </div>
-    </form>
-  </div>
-
-  <script>
+</body>
+</html>
