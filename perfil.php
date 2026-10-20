@@ -2,9 +2,9 @@
 // Iniciamos sesión para recuperar los datos
 session_start();
 
-// Si el usuario no ha iniciado sesión, lo devolvemos al index
+// Si el usuario no ha iniciado sesión, lo devolvemos al index.php
 if (!isset($_SESSION['usuario'])) {
-    header("Location: index.html");
+    header("Location: index.php");
     exit();
 }
 ?>
@@ -41,6 +41,29 @@ if (!isset($_SESSION['usuario'])) {
             padding: 0 40px;
         }
 
+        /* Botón de Menú Principal arriba a la derecha */
+        .btn-menu-principal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        .btn-menu-principal:hover {
+            background-color: #f39c12;
+            border-color: #f39c12;
+            color: #000;
+        }
+
         /* Avatar de usuario */
         .avatar-wrapper {
             width: 140px;
@@ -64,7 +87,7 @@ if (!isset($_SESSION['usuario'])) {
         .profile-info h1 {
             font-size: 32px;
             font-weight: 700;
-            color: #ffffff; /* Cambiado a blanco para que destaque con el texto de sesión */
+            color: #ffffff;
             margin-bottom: 4px;
         }
 
@@ -110,14 +133,16 @@ if (!isset($_SESSION['usuario'])) {
             width: max-content;
             margin: 30px auto;
             padding: 10px 20px;
-            background-color: #ff4d4d;
+            background-color: #b30000;
             color: white;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
+            border: none;
+            cursor: pointer;
         }
         .cerrar-btn:hover {
-            background-color: #cc0000;
+            background-color: #800000;
         }
     </style>
 </head>
@@ -125,6 +150,9 @@ if (!isset($_SESSION['usuario'])) {
 
     <!-- Encabezado con imagen de fondo -->
     <div class="profile-banner">
+        <!-- Botón para volver al menú principal -->
+        <a href="index.php" class="btn-menu-principal">Menú principal</a>
+
         <div class="avatar-wrapper">
             <!-- Icono SVG de silueta de usuario -->
             <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -149,12 +177,12 @@ if (!isset($_SESSION['usuario'])) {
         </div>
     </div>
 
-    <!-- Botón para cerrar sesión (opcional pero útil) -->
+    <!-- Botón para cerrar sesión -->
     <a href="logout.php" class="logout-btn">Cerrar Sesión</a>
 
     <!-- Formulario para eliminar cuenta con advertencia de seguridad -->
     <form action="eliminar.php" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar tu cuenta permanentemente? Esta acción no se puede deshacer.');">
-        <button type="submit" class="cerrar-btn" style="background-color: #b30000; border: none; cursor: pointer;">
+        <button type="submit" class="cerrar-btn">
             Eliminar Cuenta
         </button>
     </form>

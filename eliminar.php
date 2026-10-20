@@ -4,7 +4,7 @@ session_start();
 
 // Si no hay sesión iniciada, redirigimos al index
 if (!isset($_SESSION['usuario'])) {
-    header("Location: index.html");
+    header("Location: index.php");
     exit();
 }
 
@@ -33,7 +33,7 @@ if ($stmt->execute()) {
     session_destroy();
 
     // Mensaje de éxito y redirección
-    echo "<script>alert('Tu cuenta ha sido eliminada exitosamente.'); window.location.href='index.html';</script>";
+    echo "<script>alert('Tu cuenta ha sido eliminada exitosamente.'); window.location.href='index.php';</script>";
 } else {
     echo "<script>alert('Hubo un error al intentar eliminar la cuenta.'); window.location.href='perfil.php';</script>";
 }
